@@ -9,8 +9,8 @@ function guessWord() {
     paragraph1.appendChild(bold);
     len=word.length;
     paragraph2 = document.getElementById('fillLetters');
-    for (var i = 0; i < len*2; ++i) {
-        var position = (i % 2 === 0) ? (characters[i]='_') : (characters[i]=' ');
+    for (var i = 0; i < len * 2; ++i) {
+        var position = (i % 2 === 0) ? (characters[i] = '_') : (characters[i] = ' ');
         text=document.createTextNode(characters[i]);
         paragraph2.appendChild(text);
     }
@@ -18,8 +18,8 @@ function guessWord() {
 }
 
 function addElements() {
-    var label1=document.createElement('label');
-    label1.innerHTML='Player 2:';
+    var label1 = document.createElement('label');
+    label1.innerHTML = 'Player 2:';
     label1.setAttribute('id', 'label1');
     document.body.appendChild(label1);
 
@@ -40,13 +40,13 @@ function addElements() {
 
     var img = document.createElement('img');
     img.setAttribute('id', 'hImg');
-    img.src='images/hangman0.png';
+    img.src = 'images/hangman0.png';
     document.body.appendChild(img);
 
     paragraph3 = document.createElement('p');
     paragraph3.setAttribute('id', 'paragraph3');
     bold = document.createElement('strong');
-    text=document.createTextNode('Did not work:  ');
+    text= document.createTextNode('Did not work:  ');
     bold.appendChild(text);
     paragraph3.appendChild(bold);
     linebreak = document.createElement("br");
@@ -61,22 +61,22 @@ function verifyLetter() {
     var L = document.getElementById('letter').value;
     for (var i = 0; i < len; ++i) {
         if (word[i] === L) {
-            characters[2*i] = L;
+            characters[2 * i] = L;
             ++guessedL;
         }
         else {
             ++error;
         }
-        text=document.createTextNode(characters[2*i]+characters[2*i+1]);
+        text = document.createTextNode(characters[2 * i]+characters[2 * i + 1]);
         paragraph2.appendChild(text);
     }
-    if (error===len) {
+    if (error === len) {
         ++mistakes;
         document.getElementById('hImg').src ='images/hangman'+mistakes+'.png';
         text=document.createTextNode(L+ ', ');
         paragraph3.appendChild(text);
     }
-    if (mistakes===7) {
+    if (mistakes === 7) {
         alert('the game is over! player 1 won');
         chooseAnother();
     }
@@ -87,9 +87,9 @@ function verifyLetter() {
 }
 
 function chooseAnother() {
-    word='';
+    word = '';
     finish = 0;
-    paragraph1.innerHTML='';
+    paragraph1.innerHTML = '';
     paragraph2.innerHTML = '';
     paragraph3.innerHTML = '';
     document.getElementById('hImg').remove();
@@ -98,6 +98,6 @@ function chooseAnother() {
     document.getElementById('btn').remove();
     document.getElementById('letter').remove();
     characters = [];
-    mistakes=0;
-    guessedL=0;
+    mistakes = 0;
+    guessedL = 0;
 }
