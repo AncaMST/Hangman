@@ -2,7 +2,7 @@ var characters = [], paragraph1, paragraph2, paragraph3, text, word, len, mistak
 
 function guessWord() {
     word = document.getElementById('word').value;
-    paragraph1 = document.getElementById('guessLetters');
+  //  paragraph1 = document.getElementById('guessLetters');
     len = word.length;
     paragraph2 = document.getElementById('fillLetters');
     for (var i = 0; i < len * 2; ++i) {

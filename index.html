@@ -4,20 +4,23 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Hangman</title>
+    <link href="styles/style.css" rel="stylesheet">
 </head>
 <body>
+    <h1>Hangman</h1>
+    <p><b>The word to be guessed</b></p>
     <label for = 'word'>Player 1:</label>
-    <input type='password' id='word'>
-    <button onclick='guessWord()'>The word to be guessed:</button>
-    <p id = 'guessLetters'><b>Guess the word!</b></p>
+    <input class= "word" type='password' id='word'>
+    <button onclick='guessWord()'>Save word!</button>
+    <p class = "gL" id = 'guessLetters'><b>Guess the word!</b></p>
     <p id = 'fillLetters'></p>
     <label for ='letter'>Player 2:</label>
-    <input type = 'text' id='letter'>
+    <input class= "word" type = 'text' id='letter'>
     <button onclick='verifyLetter()'>Verify letter</button>
     <p></p>
     <img src='images/hangman0.png' id='hImg'>
-    <p><b>Did not work:</b></p>
-    <p id= 'paragraph3'></p>
+    <p class="gL"><b>Did not work:</b></p>
+    <p class="word" id= 'paragraph3'></p>
     <script src='scripts/main.js'></script>
 </body>
 </html>
